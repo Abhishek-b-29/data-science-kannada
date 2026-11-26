@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Enrollment Confirmed! | PyLibWork Data Science Batch</title>
+  <title>Workshop Seat Confirmed! | PyLibWork Python & Data Science</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Meta Pixel Code -->
   <script>
@@ -18,23 +21,39 @@
     fbq('init', '1772464847374419');
     fbq('track', 'PageView');
     fbq('track', 'Purchase', {
-      value: 5000.00,
+      value: 99.00,
       currency: 'INR',
-      content_name: 'Data Science & Python Live Batch (Kannada) - Dec 2026'
+      content_name: 'Python & Data Science Live Workshop (Kannada) - ₹99'
     });
   </script>
   <noscript>
     <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1772464847374419&ev=Purchase&cd[value]=5000.00&cd[currency]=INR&noscript=1" />
+      src="https://www.facebook.com/tr?id=1772464847374419&ev=Purchase&cd[value]=99.00&cd[currency]=INR&noscript=1" />
   </noscript>
   <!-- End Meta Pixel Code -->
 
   <style>
+    :root {
+      --bg: #060b16;
+      --surface: rgba(15, 23, 42, 0.88);
+      --border: rgba(148, 163, 184, 0.22);
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --accent: #22c55e;
+      --accent-hover: #16a34a;
+      --cyan: #38bdf8;
+    }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: #f0fdf4;
-      color: #0f172a;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg);
+      background-image:
+        radial-gradient(circle at 18% 18%, rgba(56, 189, 248, 0.14), transparent 40%),
+        radial-gradient(circle at 82% 80%, rgba(34, 197, 94, 0.12), transparent 40%),
+        linear-gradient(to right, rgba(56, 189, 248, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
+      background-size: auto, auto, 32px 32px, 32px 32px;
+      color: var(--text);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -42,77 +61,120 @@
       padding: 20px;
     }
     .success-card {
-      background: #ffffff;
-      max-width: 540px;
+      background: var(--surface);
+      backdrop-filter: blur(14px);
+      max-width: 560px;
       width: 100%;
-      border-radius: 16px;
-      padding: 36px 24px;
+      border-radius: 20px;
+      padding: 36px 26px;
       text-align: center;
-      box-shadow: 0 12px 30px rgba(22, 163, 74, 0.12);
-      border: 1px solid #bbf7d0;
+      box-shadow: 0 20px 50px rgba(2, 6, 23, 0.7);
+      border: 1px solid rgba(56, 189, 248, 0.28);
+      border-top: 2px solid var(--accent);
+    }
+    .badge {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #86efac;
+      background: rgba(34, 197, 94, 0.14);
+      border: 1px solid rgba(34, 197, 94, 0.35);
+      padding: 5px 12px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+      letter-spacing: 0.4px;
     }
     .icon-circle {
       width: 68px;
       height: 68px;
-      background: #dcfce7;
-      color: #16a34a;
-      font-size: 2.2rem;
+      background: rgba(34, 197, 94, 0.16);
+      border: 1px solid rgba(34, 197, 94, 0.45);
+      color: #4ade80;
+      font-size: 2rem;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       margin: 0 auto 18px;
-      font-weight: bold;
+      font-weight: 800;
+      box-shadow: 0 0 24px rgba(34, 197, 94, 0.25);
     }
-    h1 { font-size: 1.7rem; color: #14532d; margin-bottom: 10px; }
-    p { color: #475569; font-size: 1rem; line-height: 1.6; margin-bottom: 20px; }
+    h1 {
+      font-size: 1.75rem;
+      color: #ffffff;
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    p {
+      color: #cbd5e1;
+      font-size: 0.98rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
     .details-box {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 10px;
-      padding: 16px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--cyan);
+      border-radius: 12px;
+      padding: 16px 18px;
       text-align: left;
       margin-bottom: 24px;
-      font-size: 0.95rem;
+      font-size: 0.94rem;
     }
-    .details-box div { margin-bottom: 8px; }
+    .details-box div {
+      margin-bottom: 9px;
+      color: #e2e8f0;
+    }
     .details-box div:last-child { margin-bottom: 0; }
+    .details-box strong { color: #7dd3fc; }
     .whatsapp-btn {
       display: inline-block;
       background: #25d366;
-      color: #ffffff;
-      font-weight: 700;
-      font-size: 1.1rem;
-      padding: 16px 28px;
-      border-radius: 10px;
+      color: #052e16;
+      font-weight: 800;
+      font-size: 1.05rem;
+      padding: 16px 26px;
+      border-radius: 12px;
       text-decoration: none;
       width: 100%;
-      box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35);
-      transition: background 0.2s ease;
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.32);
+      transition: background 0.2s ease, transform 0.12s ease;
     }
-    .whatsapp-btn:hover { background: #1ebe5d; }
-    .help-text { font-size: 0.85rem; color: #64748b; margin-top: 16px; margin-bottom: 0; }
+    .whatsapp-btn:hover {
+      background: #22c55e;
+      transform: translateY(-1px);
+    }
+    .help-text {
+      font-size: 0.84rem;
+      color: var(--muted);
+      margin-top: 18px;
+      margin-bottom: 0;
+    }
+    .help-text strong { color: #e2e8f0; }
   </style>
 </head>
 <body>
 
   <div class="success-card">
+    <div class="badge">PAYMENT VERIFIED • ₹99 WORKSHOP</div>
     <div class="icon-circle">✓</div>
-    <h1>Welcome to PyLibWork!</h1>
-    <p>Your payment of <strong>₹5,000</strong> is confirmed, and your seat for the <strong>Data Science & Python Live Batch (Kannada)</strong> is reserved.</p>
+    <h1>Your Workshop Seat is Confirmed!</h1>
+    <p>Thank you for registering! Your payment of <strong>₹99</strong> is confirmed for the <strong>Python & Data Science Live Workshop in ಕನ್ನಡ</strong> with PyLibWork.</p>
 
     <div class="details-box">
-      <div><strong>📅 Batch Starts:</strong> December 1st, 2026</div>
-      <div><strong>⏰ Weekday Timing:</strong> Mon–Fri, 07:00 PM – 09:00 PM</div>
-      <div><strong>💡 Weekend Doubt Sessions:</strong> Sat–Sun, 10:00 AM – 01:00 PM</div>
+      <div><strong>📅 Workshop Dates:</strong> Saturday (28-11-2026) or Sunday (29-11-2026)</div>
+      <div><strong>⏰ Live Session Timing:</strong> 10:00 AM – 11:00 AM IST</div>
+      <div><strong>🎯 Session Focus:</strong> Live Python Coding, Data Science Roadmap, Interview Rounds & CTC (LPA) Guide</div>
     </div>
 
-    <!-- REPLACE WITH YOUR PRIVATE WHATSAPP GROUP INVITE LINK -->
     <a href="https://chat.whatsapp.com/EHCruPsBhwd0wp6frnrlQz" class="whatsapp-btn" target="_blank" rel="noopener">
-      Join Student WhatsApp Group Now →
+      Join Workshop WhatsApp Group Now →
     </a>
 
-    <p class="help-text">All Zoom class links, setup instructions, and study materials will be shared inside the WhatsApp group. Need help? Message <strong>+91 8722401944</strong>.</p>
+    <p class="help-text">
+      All live Zoom/Meet joining links and session reminders will be shared inside the WhatsApp group. Need help? Call or WhatsApp <strong>+91 8722401944</strong>.
+    </p>
   </div>
 
 </body>

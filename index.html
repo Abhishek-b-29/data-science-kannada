@@ -4,7 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Data Science & Python Live Batch in Kannada | PyLibWork</title>
-  <meta name="description" content="Join PyLibWork's 3-Month Live Practical Data Science & Python Batch in Kannada starting December 1st, 2026. Enroll now for ₹5,000." />
+  <meta name="description" content="Join PyLibWork's 3-Month Live Practical Data Science & Python Batch in Kannada starting December 7th, 2026. Enroll for ₹5,000 or book the ₹99 Weekend Live Workshop." />
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Meta Pixel Code -->
   <script>
@@ -27,224 +32,941 @@
 
   <style>
     :root {
-      --primary: #0b5ed7;
-      --primary-dark: #084298;
-      --accent: #16a34a;
-      --accent-hover: #15803d;
-      --bg: #f8fafc;
-      --card: #ffffff;
-      --text: #0f172a;
-      --muted: #475569;
-      --border: #e2e8f0;
+      --bg-base: #060b16;
+      --surface: rgba(15, 23, 42, 0.72);
+      --surface-solid: #0f172a;
+      --card-inner: rgba(2, 6, 23, 0.65);
+      --cyan: #38bdf8;
+      --cyan-bright: #7dd3fc;
+      --indigo: #6366f1;
+      --emerald: #10b981;
+      --emerald-hover: #059669;
+      --gold: #facc15;
+      --text-main: #f8fafc;
+      --text-sub: #cbd5e1;
+      --text-muted: #94a3b8;
+      --border: rgba(148, 163, 184, 0.16);
+      --border-glow: rgba(56, 189, 248, 0.35);
     }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      padding-bottom: 90px;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-color: var(--bg-base);
+      background-image:
+        radial-gradient(circle at 15% 10%, rgba(56, 189, 248, 0.14), transparent 38%),
+        radial-gradient(circle at 85% 18%, rgba(99, 102, 241, 0.16), transparent 40%),
+        radial-gradient(circle at 50% 85%, rgba(16, 185, 129, 0.08), transparent 45%),
+        linear-gradient(to right, rgba(56, 189, 248, 0.045) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(56, 189, 248, 0.045) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 100% 100%, 36px 36px, 36px 36px;
+      color: var(--text-main);
+      line-height: 1.65;
+      padding-bottom: 98px;
+      overflow-x: hidden;
     }
-    .container { max-width: 820px; margin: 0 auto; padding: 20px 16px; }
-    .hero {
-      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+
+    /* Sticky Top Glass Navbar */
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 900;
+      background: rgba(6, 11, 22, 0.82);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 12px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text-main);
+      font-weight: 800;
+      font-size: 1.05rem;
+      letter-spacing: -0.02em;
+    }
+    .brand-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 9px;
+      background: linear-gradient(135deg, #0284c7, #6366f1);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.82rem;
+      font-weight: 600;
       color: #fff;
-      padding: 36px 20px;
-      border-radius: 16px;
+      box-shadow: 0 0 16px rgba(56, 189, 248, 0.35);
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-demo-link {
+      color: var(--cyan-bright);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(56, 189, 248, 0.28);
+      background: rgba(56, 189, 248, 0.08);
+      transition: background 0.2s ease;
+    }
+    .nav-demo-link:hover { background: rgba(56, 189, 248, 0.18); }
+    .nav-enroll-btn {
+      background: var(--emerald);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    .nav-enroll-btn:hover { background: var(--emerald-hover); }
+
+    .container { max-width: 920px; margin: 0 auto; padding: 24px 16px; }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      background: linear-gradient(155deg, rgba(15, 23, 42, 0.92) 0%, rgba(23, 37, 84, 0.85) 55%, rgba(15, 23, 42, 0.95) 100%);
+      backdrop-filter: blur(14px);
+      border: 1px solid var(--border-glow);
+      border-radius: 22px;
+      padding: 40px 22px 32px;
       text-align: center;
       margin-bottom: 24px;
-      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.15);
+      box-shadow: 0 24px 50px rgba(2, 6, 23, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.08);
     }
-    .badge {
-      display: inline-block;
-      background: #facc15;
-      color: #0f172a;
-      font-weight: 800;
-      font-size: 0.85rem;
-      padding: 5px 14px;
+    .live-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(250, 204, 21, 0.4);
+      color: var(--gold);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 6px 14px;
       border-radius: 999px;
-      margin-bottom: 14px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+      margin-bottom: 18px;
+      letter-spacing: 0.03em;
     }
-    .hero h1 { font-size: 1.9rem; line-height: 1.25; margin-bottom: 12px; }
-    .hero p { font-size: 1.05rem; color: #cbd5e1; max-width: 640px; margin: 0 auto 20px; }
-    .price-box {
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+      animation: pulse 1.8s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.75); }
+      70% { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+    }
+
+    .hero h1 {
+      font-size: clamp(1.75rem, 4vw, 2.55rem);
+      font-weight: 800;
+      line-height: 1.18;
+      letter-spacing: -0.025em;
+      margin-bottom: 14px;
+      background: linear-gradient(to right, #ffffff, #bae6fd);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      font-size: 1.05rem;
+      color: #dbeafe;
+      max-width: 680px;
+      margin: 0 auto 22px;
+    }
+
+    /* Countdown */
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 22px;
+      flex-wrap: wrap;
+    }
+    .time-box {
+      background: rgba(6, 11, 22, 0.82);
+      border: 1px solid rgba(56, 189, 248, 0.25);
       border-radius: 12px;
-      padding: 14px 20px;
+      padding: 10px 14px;
+      min-width: 76px;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    }
+    .time-box strong {
+      display: block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.32rem;
+      font-weight: 600;
+      color: var(--cyan);
+    }
+    .time-box span {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+    }
+
+    /* Price Glass Card */
+    .price-box {
+      background: rgba(6, 11, 22, 0.65);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      border-radius: 14px;
+      padding: 14px 24px;
       display: inline-block;
+      margin-bottom: 22px;
+    }
+    .old-price {
+      text-decoration: line-through;
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      margin-right: 10px;
+    }
+    .new-price {
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: #4ade80;
+    }
+    .price-caption {
+      font-size: 0.84rem;
+      color: #e2e8f0;
+      margin-top: 2px;
+      font-weight: 500;
+    }
+
+    /* CTA Buttons */
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 26px;
+    }
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: #fff;
+      font-size: 1.05rem;
+      font-weight: 700;
+      padding: 15px 28px;
+      border-radius: 12px;
+      text-decoration: none;
+      border: 1px solid rgba(52, 211, 153, 0.4);
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(16, 185, 129, 0.32);
+      transition: transform 0.15s ease, box-shadow 0.2s ease;
+    }
+    .btn-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(16, 185, 129, 0.45);
+    }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(56, 189, 248, 0.12);
+      color: #e0f2fe;
+      border: 1px solid rgba(56, 189, 248, 0.45);
+      font-size: 1.02rem;
+      font-weight: 700;
+      padding: 15px 24px;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+    .btn-secondary:hover {
+      background: rgba(56, 189, 248, 0.22);
+      transform: translateY(-2px);
+    }
+
+    /* Live Kannada + Python Code Terminal Preview */
+    .terminal-card {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #040812;
+      border: 1px solid rgba(56, 189, 248, 0.28);
+      border-radius: 14px;
+      text-align: left;
+      overflow: hidden;
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.55);
+    }
+    .terminal-header {
+      background: rgba(15, 23, 42, 0.95);
+      padding: 9px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+    }
+    .terminal-dots {
+      display: flex;
+      gap: 6px;
+    }
+    .terminal-dots span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .dot-red { background: #ef4444; }
+    .dot-yellow { background: #f59e0b; }
+    .dot-green { background: #22c55e; }
+    .terminal-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.74rem;
+      color: var(--text-muted);
+    }
+    .terminal-body {
+      padding: 14px 16px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      line-height: 1.65;
+      color: #e2e8f0;
+      overflow-x: auto;
+    }
+    .tok-comment { color: #64748b; }
+    .tok-kw { color: #c084fc; }
+    .tok-fn { color: #38bdf8; }
+    .tok-str { color: #4ade80; }
+    .tok-num { color: #fbbf24; }
+
+    /* Glassmorphic Section Cards */
+    .card {
+      background: var(--surface);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 26px 22px;
+      margin-bottom: 22px;
+      box-shadow: 0 12px 32px rgba(2, 6, 23, 0.45);
+      transition: border-color 0.2s ease;
+    }
+    .card:hover { border-color: rgba(56, 189, 248, 0.28); }
+    .section-tag {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.74rem;
+      font-weight: 600;
+      color: var(--cyan);
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      padding: 3px 10px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+    .card h2 {
+      font-size: 1.38rem;
+      font-weight: 800;
+      color: #f8fafc;
+      letter-spacing: -0.015em;
+      margin-bottom: 10px;
+    }
+    .card-sub {
+      color: var(--text-sub);
+      font-size: 0.96rem;
+      margin-bottom: 18px;
+    }
+
+    /* Workshop Box & Value Cards */
+    .demo-box {
+      background: linear-gradient(145deg, rgba(30, 58, 138, 0.24), rgba(6, 11, 22, 0.85));
+      border: 1px solid rgba(56, 189, 248, 0.32);
+      border-radius: 16px;
+      padding: 20px;
+    }
+    .value-grid {
+      display: grid;
+      gap: 10px;
       margin-bottom: 20px;
     }
-    .old-price { text-decoration: line-through; color: #94a3b8; font-size: 1.1rem; margin-right: 10px; }
-    .new-price { font-size: 2rem; font-weight: 800; color: #4ade80; }
-    .btn-cta {
-      display: inline-block;
-      background: var(--accent);
-      color: #fff;
-      font-size: 1.15rem;
+    .value-item {
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 14px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.94rem;
+      color: #e2e8f0;
+    }
+    .value-check {
+      color: #4ade80;
+      font-weight: 800;
+      font-size: 1.05rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .step-label {
+      font-size: 0.95rem;
       font-weight: 700;
-      padding: 16px 32px;
-      border-radius: 10px;
-      text-decoration: none;
-      border: none;
+      color: #f8fafc;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .slot-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .slot-btn {
+      background: rgba(6, 11, 22, 0.85);
+      color: #e2e8f0;
+      border: 1px solid rgba(148, 163, 184, 0.28);
+      border-radius: 12px;
+      padding: 14px 16px;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.18s ease;
+    }
+    .slot-btn:hover {
+      border-color: rgba(56, 189, 248, 0.6);
+      transform: translateY(-1px);
+    }
+    .slot-btn strong {
+      display: block;
+      color: #fff;
+      font-size: 1rem;
+      margin-bottom: 3px;
+    }
+    .slot-btn span {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+    .slot-btn.active {
+      background: rgba(2, 132, 199, 0.22);
+      border-color: var(--cyan);
+      box-shadow: 0 0 0 1px var(--cyan), 0 8px 20px rgba(2, 132, 199, 0.2);
+    }
+    .slot-btn.active span { color: #bae6fd; }
+
+    .btn-demo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #0284c7, #2563eb);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.04rem;
+      padding: 15px 26px;
+      border-radius: 12px;
+      border: 1px solid rgba(125, 211, 252, 0.4);
       cursor: pointer;
       width: 100%;
-      max-width: 380px;
-      box-shadow: 0 6px 20px rgba(22, 163, 74, 0.35);
-      transition: background 0.2s ease, transform 0.1s ease;
+      max-width: 420px;
+      box-shadow: 0 10px 24px rgba(2, 132, 199, 0.32);
+      transition: transform 0.15s ease, box-shadow 0.2s ease;
     }
-    .btn-cta:hover { background: var(--accent-hover); transform: translateY(-1px); }
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 24px 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+    .btn-demo:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(2, 132, 199, 0.45);
     }
-    .card h2 { font-size: 1.3rem; color: var(--primary-dark); margin-bottom: 14px; }
+    .selected-summary {
+      margin-top: 10px;
+      font-size: 0.88rem;
+      color: #bae6fd;
+    }
+
+    /* Schedule Grid */
     .schedule-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 12px;
     }
     .schedule-item {
-      background: #eff6ff;
-      border-left: 4px solid var(--primary);
-      padding: 12px 14px;
-      border-radius: 8px;
+      background: var(--card-inner);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--cyan);
+      padding: 14px 15px;
+      border-radius: 12px;
+      transition: transform 0.15s ease;
     }
-    .schedule-item strong { display: block; color: var(--primary-dark); font-size: 0.9rem; }
-    .schedule-item span { font-size: 1rem; font-weight: 600; color: var(--text); }
+    .schedule-item:hover { transform: translateY(-2px); }
+    .schedule-icon {
+      font-size: 1.15rem;
+      margin-bottom: 6px;
+      display: block;
+    }
+    .schedule-item strong {
+      display: block;
+      color: var(--cyan-bright);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 2px;
+    }
+    .schedule-item span {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: #f8fafc;
+    }
+
+    /* Curriculum Tabs */
+    .tab-buttons {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+    .tab-btn {
+      background: var(--card-inner);
+      color: var(--text-sub);
+      border: 1px solid var(--border);
+      padding: 10px 15px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-family: inherit;
+      font-weight: 700;
+      font-size: 0.88rem;
+      transition: all 0.15s ease;
+    }
+    .tab-btn:hover { border-color: rgba(56, 189, 248, 0.45); color: #fff; }
+    .tab-btn.active {
+      background: linear-gradient(135deg, #2563eb, #4f46e5);
+      color: #fff;
+      border-color: rgba(129, 140, 248, 0.6);
+      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
+    }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; animation: fadeIn 0.2s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+
     .module-list { list-style: none; }
     .module-list li {
-      padding: 10px 0;
+      padding: 12px 0;
       border-bottom: 1px solid var(--border);
       display: flex;
       align-items: flex-start;
       gap: 10px;
+      color: #e2e8f0;
+      font-size: 0.95rem;
     }
     .module-list li:last-child { border-bottom: none; }
-    .check { color: var(--accent); font-weight: 800; font-size: 1.1rem; }
+    .check { color: #4ade80; font-weight: 800; font-size: 1.05rem; }
+
+    /* FAQ Accordion */
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 13px 0;
+    }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      color: #f8fafc;
+      font-family: inherit;
+      font-weight: 700;
+      font-size: 0.98rem;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 4px 0;
+    }
+    .faq-q span {
+      color: var(--cyan);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.15rem;
+      transition: transform 0.2s ease;
+    }
+    .faq-item.open .faq-q span { transform: rotate(45deg); }
+    .faq-a {
+      display: none;
+      color: var(--text-sub);
+      font-size: 0.93rem;
+      padding-top: 8px;
+    }
+    .faq-item.open .faq-a { display: block; }
+
     .support-note {
       text-align: center;
-      color: var(--muted);
-      font-size: 0.95rem;
-      margin-top: 12px;
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      margin-top: 8px;
     }
+
+    /* Sticky Bottom Bar */
     .sticky-bar {
       position: fixed;
       bottom: 0;
       left: 0;
       right: 0;
-      background: #ffffff;
-      border-top: 1px solid var(--border);
+      background: rgba(6, 11, 22, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-top: 1px solid var(--border-glow);
       padding: 12px 16px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 -4px 16px rgba(15, 23, 42, 0.08);
+      box-shadow: 0 -8px 28px rgba(0, 0, 0, 0.7);
       z-index: 999;
     }
-    .sticky-price { font-weight: 800; font-size: 1.2rem; color: var(--text); }
-    .sticky-sub { display: block; font-size: 0.8rem; color: var(--muted); font-weight: 500; }
+    .sticky-price {
+      font-weight: 800;
+      font-size: 1.18rem;
+      color: #4ade80;
+    }
+    .sticky-sub {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--text-sub);
+      font-weight: 500;
+    }
     .sticky-btn {
-      background: var(--accent);
+      background: linear-gradient(135deg, #10b981, #059669);
       color: #fff;
+      font-family: inherit;
       font-weight: 700;
       padding: 12px 22px;
-      border-radius: 8px;
+      border-radius: 10px;
       border: none;
-      font-size: 1rem;
+      font-size: 0.98rem;
       cursor: pointer;
+      box-shadow: 0 4px 16px rgba(16, 185, 129, 0.35);
+    }
+
+    @media (max-width: 520px) {
+      .nav-demo-link { display: none; }
+      .hero { padding: 30px 16px 24px; }
+      .card { padding: 20px 16px; }
     }
   </style>
 </head>
 <body>
 
+  <!-- TOP STICKY GLASS NAVBAR -->
+  <header class="top-nav">
+    <div class="nav-inner">
+      <a href="#" class="brand">
+        <span class="brand-icon">AI</span>
+        <span>PyLibWork</span>
+      </a>
+      <div class="nav-actions">
+        <a href="#weekend-demo" class="nav-demo-link">Workshop ₹99</a>
+        <button type="button" class="nav-enroll-btn" onclick="startCheckout()">Enroll ₹5,000</button>
+      </div>
+    </div>
+  </header>
+
   <div class="container">
-    <div class="hero">
-      <div class="badge">PyLibWork Education Platform • Live Kannada Batch</div>
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="live-pill">
+        <span class="pulse-dot"></span>
+        <span>PyLibWork AI & Data Science • Live Kannada Batch</span>
+      </div>
+
       <h1>Data Science & Python Live Training in ಕನ್ನಡ</h1>
-      <p>Master Python, Data Analysis, Deep Learning, and NLP from scratch with live interactive classes, Kannada explanations, and real-world portfolio projects.</p>
-      
+      <p>Master Python, Data Analysis, Machine Learning, Deep Learning, and AI from scratch with live coding in Kannada, weekend practice, and real-world projects.</p>
+
+      <div class="countdown" aria-label="Batch countdown">
+        <div class="time-box"><strong id="cd-days">--</strong><span>Days</span></div>
+        <div class="time-box"><strong id="cd-hours">--</strong><span>Hours</span></div>
+        <div class="time-box"><strong id="cd-mins">--</strong><span>Minutes</span></div>
+        <div class="time-box"><strong id="cd-secs">--</strong><span>Seconds</span></div>
+      </div>
+
       <div class="price-box">
         <span class="old-price">₹30,000</span>
         <span class="new-price">₹5,000</span>
-        <div style="font-size: 0.85rem; color: #e2e8f0; margin-top: 4px;">Complete 3-Month Live Program • Limited Seats</div>
+        <div class="price-caption">Complete 3-Month Live Program • Starts Dec 7th, 2026</div>
       </div>
-      <br />
-      <button class="btn-cta" onclick="startCheckout()">Enroll Now — ₹5,000</button>
-    </div>
 
-    <div class="card">
-      <h2>📅 Batch Schedule & Duration</h2>
+      <div class="hero-actions">
+        <button type="button" class="btn-cta" onclick="startCheckout()">Enroll Full Batch — ₹5,000</button>
+        <a href="#weekend-demo" class="btn-secondary">Book Demo — ₹99</a>
+      </div>
+
+      <!-- LIVE KANNADA + PYTHON CODE TERMINAL PREVIEW -->
+      <div class="terminal-card" aria-label="Live Kannada + Python Learning Preview">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span class="dot-red"></span>
+            <span class="dot-yellow"></span>
+            <span class="dot-green"></span>
+          </div>
+          <span class="terminal-title">Live Kannada + Python Learning Preview • model_pipeline.py</span>
+        </div>
+        <pre class="terminal-body"><code><span class="tok-comment"># Step 1: ಕನ್ನಡದಲ್ಲಿ ಸುಲಭವಾಗಿ Data &amp; ML ಕಲಿಯಿರಿ</span>
+<span class="tok-kw">import</span> pandas <span class="tok-kw">as</span> pd
+<span class="tok-kw">from</span> sklearn.ensemble <span class="tok-kw">import</span> RandomForestClassifier
+
+df = pd.<span class="tok-fn">read_csv</span>(<span class="tok-str">"karnataka_tech_hiring.csv"</span>).<span class="tok-fn">dropna</span>()
+model = <span class="tok-fn">RandomForestClassifier</span>(n_estimators=<span class="tok-num">100</span>, random_state=<span class="tok-num">42</span>)
+model.<span class="tok-fn">fit</span>(df[[<span class="tok-str">"python_projects"</span>, <span class="tok-str">"ml_practice_hrs"</span>]], df[<span class="tok-str">"job_ready"</span>])
+<span class="tok-fn">print</span>(<span class="tok-str">"Live Batch Starts: Dec 7th, 2026 • Ready to Build AI!"</span>)</code></pre>
+      </div>
+    </section>
+
+    <!-- WEEKEND LIVE WORKSHOP SECTION -->
+    <section class="card" id="weekend-demo">
+      <span class="section-tag">Weekend Live Session • ₹99</span>
+      <h2>Live 1-Hour Workshop: Python & Data Science in ಕನ್ನಡ (10:00 AM – 11:00 AM)</h2>
+      <p class="card-sub">
+        Data Science and AI are among the fastest-growing career skills across IT, analytics, and software engineering—yet most learners struggle when complex concepts are taught only in fast-paced English. In this focused 1-hour live session (<strong>10:00 AM to 11:00 AM</strong>), you will understand why data-driven skills are essential today and experience how easily Python and Machine Learning click when explained step-by-step in Kannada.
+      </p>
+
+      <div class="demo-box">
+        <div class="value-grid">
+          <div class="value-item">
+            <span class="value-check">✓</span>
+            <div><strong>Why Data Science Matters Now:</strong> Real industry demand, career opportunities for freshers &amp; working professionals, and how AI tools rely on Python foundations.</div>
+          </div>
+          <div class="value-item">
+            <span class="value-check">✓</span>
+            <div><strong>Live Hands-On Walkthrough:</strong> Watch real Python data analysis and a complete Machine Learning workflow built live from scratch in Kannada.</div>
+          </div>
+          <div class="value-item">
+            <span class="value-check">✓</span>
+            <div><strong>3-Month Career Blueprint &amp; Live Q&amp;A:</strong> Clear step-by-step learning roadmap, portfolio project strategy, and direct Q&amp;A with Abhishek.</div>
+          </div>
+        </div>
+
+        <span class="step-label">Select Your Convenient Day (10:00 AM – 11:00 AM IST • Fee: ₹99)</span>
+        <div class="slot-grid" id="slotGrid">
+          <button type="button" class="slot-btn active" data-slot="Saturday (28-11-2026) • 10:00 AM – 11:00 AM" onclick="selectSlot(this)">
+            <strong>Saturday (28-11-2026)</strong>
+            <span>10:00 AM – 11:00 AM IST • Live Kannada Workshop</span>
+          </button>
+          <button type="button" class="slot-btn" data-slot="Sunday (29-11-2026) • 10:00 AM – 11:00 AM" onclick="selectSlot(this)">
+            <strong>Sunday (29-11-2026)</strong>
+            <span>10:00 AM – 11:00 AM IST • Live Kannada Workshop</span>
+          </button>
+        </div>
+
+        <button type="button" id="bookDemoBtn" class="btn-demo" onclick="bookDemoSlot()">
+          Book Demo — ₹99
+        </button>
+        <div class="selected-summary" id="selectedSlotText">
+          Selected Slot: <strong>Saturday (28-11-2026) • 10:00 AM – 11:00 AM</strong> (Fee: ₹99)
+        </div>
+      </div>
+    </section>
+
+    <!-- MAIN BATCH SCHEDULE & DURATION -->
+    <section class="card">
+      <span class="section-tag">3-Month Live Cohort</span>
+      <h2>📅 Main Batch Schedule & Duration (Starts Dec 7th, 2026)</h2>
       <div class="schedule-grid">
         <div class="schedule-item">
+          <span class="schedule-icon">🚀</span>
           <strong>Batch Start Date</strong>
-          <span>December 1st, 2026</span>
+          <span>December 7th, 2026</span>
         </div>
         <div class="schedule-item">
+          <span class="schedule-icon">💻</span>
           <strong>Weekday Live Classes (Mon–Fri)</strong>
           <span>07:00 PM – 09:00 PM</span>
         </div>
         <div class="schedule-item">
+          <span class="schedule-icon">🛠️</span>
           <strong>Weekend Practice & Doubts (Sat–Sun)</strong>
           <span>10:00 AM – 01:00 PM</span>
         </div>
         <div class="schedule-item">
+          <span class="schedule-icon">🎥</span>
           <strong>Course Duration & Access</strong>
           <span>3 Months + Recorded Sessions</span>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="card">
+    <!-- INTERACTIVE CURRICULUM TABS -->
+    <section class="card">
+      <span class="section-tag">Practical Syllabus</span>
       <h2>🚀 What You Will Master (Hands-On Curriculum)</h2>
-      <ul class="module-list">
-        <li><span class="check">✓</span> <div><strong>Core Python & Data Handling:</strong> Python Programming Basics, NumPy, Pandas, Data Cleaning & Exploratory Data Visualization.</div></li>
-        <li><span class="check">✓</span> <div><strong>Machine Learning Core:</strong> Supervised & Unsupervised Algorithms, Feature Engineering, Model Tuning & Evaluation.</div></li>
-        <li><span class="check">✓</span> <div><strong>Deep Learning & AI Module:</strong> Applied Deep Learning, Neural Networks, and Natural Language Processing (NLP) Basics.</div></li>
-        <li><span class="check">✓</span> <div><strong>Real-World Projects & Career Prep:</strong> End-to-End Portfolio Projects, Resume Building, Mock Interviews & Certification.</div></li>
-      </ul>
-    </div>
+      <div class="tab-buttons" role="tablist">
+        <button type="button" class="tab-btn active" onclick="openTab(event, 'tab-python')">1. Python &amp; Data</button>
+        <button type="button" class="tab-btn" onclick="openTab(event, 'tab-ml')">2. Machine Learning</button>
+        <button type="button" class="tab-btn" onclick="openTab(event, 'tab-ai')">3. Deep Learning &amp; AI</button>
+        <button type="button" class="tab-btn" onclick="openTab(event, 'tab-projects')">4. Projects &amp; Career</button>
+      </div>
 
-    <div class="card" style="text-align: center;">
-      <h2>Ready to Start Your Data Science Journey?</h2>
-      <p style="color: var(--muted); margin-bottom: 18px;">Zero coding background required. Instant access to our private student WhatsApp group right after enrollment.</p>
-      <button class="btn-cta" onclick="startCheckout()">Confirm Your Seat Now — ₹5,000</button>
-      <p class="support-note">Questions before enrolling? WhatsApp us at <strong>+91 8722401944</strong></p>
-    </div>
+      <div id="tab-python" class="tab-panel active">
+        <ul class="module-list">
+          <li><span class="check">✓</span> <div><strong>Python Foundations:</strong> Variables, loops, functions, OOP, and clean coding habits explained simply in Kannada.</div></li>
+          <li><span class="check">✓</span> <div><strong>NumPy &amp; Pandas:</strong> Array operations, data cleaning, handling missing values, grouping, and real CSV/Excel datasets.</div></li>
+          <li><span class="check">✓</span> <div><strong>Data Visualization:</strong> Exploratory Data Analysis (EDA) and clear charts using Matplotlib and Seaborn.</div></li>
+        </ul>
+      </div>
+
+      <div id="tab-ml" class="tab-panel">
+        <ul class="module-list">
+          <li><span class="check">✓</span> <div><strong>Supervised Learning:</strong> Linear/Logistic Regression, Decision Trees, Random Forests, and classification workflows.</div></li>
+          <li><span class="check">✓</span> <div><strong>Unsupervised Learning:</strong> Clustering and pattern discovery on unlabeled data.</div></li>
+          <li><span class="check">✓</span> <div><strong>Model Evaluation &amp; Tuning:</strong> Train-test splits, accuracy/precision/recall metrics, and avoiding overfitting.</div></li>
+        </ul>
+      </div>
+
+      <div id="tab-ai" class="tab-panel">
+        <ul class="module-list">
+          <li><span class="check">✓</span> <div><strong>Neural Networks &amp; Deep Learning:</strong> How artificial neurons, layers, activations, and backpropagation work in practice.</div></li>
+          <li><span class="check">✓</span> <div><strong>Applied AI &amp; NLP Basics:</strong> Text processing, sentiment/classification pipelines, and modern AI workflows.</div></li>
+        </ul>
+      </div>
+
+      <div id="tab-projects" class="tab-panel">
+        <ul class="module-list">
+          <li><span class="check">✓</span> <div><strong>End-to-End Portfolio Projects:</strong> Build practical data &amp; ML projects you can showcase on GitHub and in interviews.</div></li>
+          <li><span class="check">✓</span> <div><strong>Career &amp; Interview Readiness:</strong> Resume guidance, project explanation practice, and weekend doubt support.</div></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FAQ ACCORDION -->
+    <section class="card">
+      <span class="section-tag">Got Questions?</span>
+      <h2>❓ Frequently Asked Questions</h2>
+      <div class="faq-item open">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)">
+          What happens after I book the ₹99 weekend workshop? <span>+</span>
+        </button>
+        <div class="faq-a">
+          Once you complete the ₹99 registration for either Saturday (28-11-2026) or Sunday (29-11-2026) from 10:00 AM to 11:00 AM, you will receive the live session joining link and reminder before class starts.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)">
+          Do I need prior coding or Data Science experience? <span>+</span>
+        </button>
+        <div class="faq-a">
+          No. Both the 10:00 AM – 11:00 AM weekend workshop and the December 7th, 2026 live batch start from beginner-friendly fundamentals in Kannada.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)">
+          What if I miss a live class during the 3-month batch? <span>+</span>
+        </button>
+        <div class="faq-a">
+          Recorded sessions are provided along with weekend practice and doubt-clearing sessions on Saturday and Sunday.
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA CARD -->
+    <section class="card" style="text-align: center;">
+      <h2>Ready to Start Your AI & Data Science Journey?</h2>
+      <p class="card-sub">Live batch begins <strong>December 7th, 2026</strong>. Reserve your full batch seat or join the ₹99 weekend workshop (10:00 AM – 11:00 AM).</p>
+      <div class="hero-actions" style="margin-bottom: 12px;">
+        <button type="button" class="btn-cta" onclick="startCheckout()">Enroll Now — ₹5,000</button>
+        <a href="#weekend-demo" class="btn-secondary">Book Demo — ₹99</a>
+      </div>
+      <p class="support-note">Questions before enrolling? Call or WhatsApp <strong>+91 8722401944</strong></p>
+    </section>
   </div>
 
+  <!-- STICKY BOTTOM BAR -->
   <div class="sticky-bar">
     <div>
       <span class="sticky-price">₹5,000 <small style="text-decoration:line-through; color:#94a3b8; font-size:0.85rem;">₹30,000</small></span>
-      <span class="sticky-sub">Starts Dec 1, 2026 • Live in Kannada</span>
+      <span class="sticky-sub">Batch Starts Dec 7, 2026 • Demo ₹99 (10–11 AM)</span>
     </div>
-    <button class="sticky-btn" onclick="startCheckout()">Enroll Now →</button>
+    <button type="button" class="sticky-btn" onclick="startCheckout()">Enroll Now →</button>
   </div>
 
   <script>
+    let selectedSlot = "Saturday (28-11-2026) • 10:00 AM – 11:00 AM";
+
+    function selectSlot(btn) {
+      document.querySelectorAll('.slot-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      selectedSlot = btn.getAttribute('data-slot');
+      document.getElementById('selectedSlotText').innerHTML =
+        `Selected Slot: <strong>${selectedSlot}</strong> (Fee: ₹99)`;
+    }
+
+    function bookDemoSlot() {
+      if (typeof fbq === 'function') {
+        fbq('track', 'InitiateCheckout', {
+          value: 99.00,
+          currency: 'INR',
+          content_name: 'Weekend Live Demo - ' + selectedSlot
+        });
+      }
+
+      const demoRazorpayUrl = "https://pages.razorpay.com/pl_U4eeORNQFxDBkZ/view";
+      setTimeout(function() {
+        window.location.href = demoRazorpayUrl;
+      }, 300);
+    }
+
     function startCheckout() {
-      // Fire Meta Pixel InitiateCheckout event
       if (typeof fbq === 'function') {
         fbq('track', 'InitiateCheckout', {
           value: 5000.00,
           currency: 'INR',
-          content_name: 'Data Science & Python Live Batch (Kannada) - Dec 2026'
+          content_name: 'Data Science & Python Live Batch (Kannada) - Dec 7 2026'
         });
       }
 
-      // REPLACE WITH YOUR ACTUAL RAZORPAY PAYMENT PAGE URL
       const razorpayUrl = "https://rzp.io/rzp/lvwMVZj";
-
       setTimeout(function() {
         window.location.href = razorpayUrl;
       }, 300);
     }
+
+    function openTab(evt, tabId) {
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      evt.currentTarget.classList.add('active');
+    }
+
+    function toggleFaq(btn) {
+      btn.parentElement.classList.toggle('open');
+    }
+
+    // Countdown to December 7, 2026 at 7:00 PM IST (+05:30)
+    const batchStart = new Date("2026-12-07T19:00:00+05:30").getTime();
+    function updateCountdown() {
+      const now = Date.now();
+      const diff = Math.max(0, batchStart - now);
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const mins = Math.floor((diff / (1000 * 60)) % 60);
+      const secs = Math.floor((diff / 1000) % 60);
+
+      document.getElementById("cd-days").textContent = String(days).padStart(2, "0");
+      document.getElementById("cd-hours").textContent = String(hours).padStart(2, "0");
+      document.getElementById("cd-mins").textContent = String(mins).padStart(2, "0");
+      document.getElementById("cd-secs").textContent = String(secs).padStart(2, "0");
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
   </script>
 
 </body>

@@ -656,6 +656,12 @@
       box-shadow: 0 4px 16px rgba(16, 185, 129, 0.35);
     }
 
+    .site-logo {
+        width: 180px;
+        height: auto;
+        object-fit: contain;
+    }
+
     @media (max-width: 680px) {
       .nav-links { display: none; }
       .hero { padding: 30px 16px 24px; }
@@ -669,7 +675,11 @@
   <header class="top-nav">
     <div class="nav-inner">
       <a href="#" class="brand">
-        <span class="brand-icon">AI</span>
+        <span class="brand-icon">
+          <img src="./logo"
+           alt="PyLibWork Logo"
+           class="site-logo">
+        </span>
         <span>PyLibWork</span>
       </a>
       <nav class="nav-links" aria-label="Primary Navigation">

@@ -368,7 +368,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:#aaa;font-size:14px
    <div class="section-label">04 · Meet Your Mentor</div><h2 class="section-title">Abhishek<br><span class="highlight">Founder of PyLibWork</span></h2>
    <p>This workshop is hosted by Abhishek, founder of PyLibWork. The session is designed to explain Python and Data Science concepts in Kannada with clear demonstrations and time for questions.</p>
    <p>Bring your questions about the learning roadmap, project practice or interview preparation.</p>
-   <a class="btn btn-primary" style="margin-top:20px" href="#workshop-slots">Join the Workshop</a>
+   <button class="btn btn-primary" type="button" style="margin-top:20px" onclick="bookWorkshopSlot()">Join the Workshop</button>
   </div>
  </div>
 </section>
@@ -388,14 +388,14 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:#aaa;font-size:14px
  <div class="container">
   <div class="section-label">06 · Ready to learn?</div><h2 class="section-title">Start your Python &amp; Data Science journey</h2>
   <p class="section-intro">Choose a session and join the live Kannada workshop for ₹99.</p>
-  <a class="btn btn-primary" style="margin-top:26px" href="https://www.pylibwork.co.in/">Book Your Seat — ₹99</a>
+  <button class="btn btn-primary" type="button" style="margin-top:26px" onclick="bookWorkshopSlot()">Book Your Seat — ₹99</button>  
  </div>
 </section>
 </main>
 <footer>
- <div class="container footer-inner"><a class="brand-text" href="#"><span class="brand-mark">&gt;_</span><span>PyLib<span class="accent">Work</span></span></a><p>© 2026 PyLibWork. All rights reserved.</p><a href="https://wa.me/918722401944">WhatsApp us at +91 8722401944</a></div>
+ <div class="container footer-inner"><a class="brand-text" href="#"><span class="brand-mark">P</span><span>PyLib<span class="accent">Work</span></span></a><p>© 2026 PyLibWork. All rights reserved.</p><a href="https://wa.me/918722401944">WhatsApp us at +91 8722401944</a></div>
 </footer>
-<div class="mobile-cta"><div><div class="small-price">₹99 · Live Workshop</div><div style="font-size:12px;color:#aaa">Sun / Sat · 10–11 AM IST</div></div><a class="btn btn-primary" href="https://www.pylibwork.co.in/">Book Seat</a></div>
+<div class="mobile-cta"><div><div class="small-price">₹99 · Live Workshop</div><div style="font-size:12px;color:#aaa">Sun / Sat · 10–11 AM IST</div></div><button class="btn btn-primary" type="button" onclick="bookWorkshopSlot()">Book Seat</button></div>
 <script>
 let selectedSlot = "Sunday (29-11-2026) • 10:00 AM – 11:00 AM IST";
 function selectSlot(btn){
